@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewData["Title"] = "Upload";
+}
+
+    <form action="/upload/upload" enctype="multipart/form-data" method="post">
+        <input type="file" name="FileForUpload" />
+        <button type="submit"> Upload</button>
+        @if (!string.IsNullOrEmpty(ViewBag.fileResult))
+        {
+            <br />
+
+            <label><b> @ViewBag.fileResult </b></label>
+        }
+    </form>
+<hr />
+<form action="/upload/MapImageVideo" enctype="multipart/form-data" method="post">
+    <input type="text" name="ImageId" placeholder="Image Id" />
+    <input type="text" name="VideoId" placeholder="Video Id" />
+    <button type="submit"> Map </button>
+    @if (!string.IsNullOrEmpty(ViewBag.mapId))
+    {
+        <br />
+
+        <label><b> @ViewBag.mapId </b></label>
+    }
+</form>
+
+
